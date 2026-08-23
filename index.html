@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hofkontor – Wir übernehmen das Büro. Damit du wieder Landwirt sein kannst.</title>
+<meta name="description" content="Wir übernehmen das Büro für Landwirte: Buchhaltung, Controlling, Email-Posteingang, KI-Workflows, Betriebs-KI. Von einem Landwirt, der das im eigenen Hof gelöst hat.">
+<style>
+  :root{
+    --gruen:#2f4232;
+    --gruen-hell:#4a6650;
+    --sand:#f4f1ea;
+    --sand-dunkel:#e6e0d4;
+    --text:#1f2420;
+    --grau:#6b6f69;
+    --akzent:#b8763e;
+    --weiss:#fdfcfa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--weiss);line-height:1.65;font-size:17px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{line-height:1.25;font-weight:700}
+  h1{font-size:2.6rem;letter-spacing:-0.02em}
+  h2{font-size:1.75rem;margin-bottom:1.2rem;letter-spacing:-0.01em}
+  h3{font-size:1.15rem;margin-bottom:.5rem}
+  p{margin-bottom:1.1rem}
+  section{padding:72px 0}
+  .kicker{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;color:var(--akzent);margin-bottom:1rem}
+
+  /* Kopf */
+  header{background:var(--gruen);color:var(--sand);padding:24px 0}
+  .kopf{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .logo{font-weight:700;letter-spacing:.02em;font-size:1.1rem}
+  .logo span{opacity:.6;font-weight:400}
+  .kopf-tel{color:var(--sand);text-decoration:none;font-weight:700;font-size:.92rem;white-space:nowrap;border-bottom:1px solid rgba(244,241,234,.4)}
+
+  /* Header mit Bild */
+  .hero{
+    position:relative;
+    background:url('Website Fotos/header-weizenernte.jpg') center/cover no-repeat;
+    color:#fff;
+    padding:0;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(rgba(30,36,32,0.45),rgba(30,36,32,0.25));
+  }
+  .hero .wrap{position:relative;z-index:1;padding:120px 24px 120px}
+  .hero h1{color:#fff;margin-bottom:1rem;font-size:2.8rem}
+  .hero .lead{font-size:1.15rem;opacity:.9;max-width:34rem;color:rgba(255,255,255,.92)}
+  .hero .lead strong{color:#fff}
+  .hero-cta{margin-top:1.5rem}
+  .hero .btn{display:inline-block;background:var(--akzent);color:#fff;text-decoration:none;padding:14px 32px;border-radius:4px;font-weight:700;font-size:1.02rem}
+  .hero .btn:hover{background:#a56735}
+
+  /* Problem */
+  .problem{background:var(--sand)}
+  .karten{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .karte{background:var(--weiss);border:1px solid var(--sand-dunkel);border-radius:6px;padding:26px}
+  .karte .nr{font-size:.8rem;font-weight:700;color:var(--akzent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem;display:block}
+  .karte p:last-child{margin-bottom:0}
+  .folge{margin-top:26px;padding:22px 26px;border-left:4px solid var(--akzent);background:var(--weiss);border-radius:0 6px 6px 0}
+  .folge p{margin-bottom:0;font-size:1.05rem}
+
+  /* Was wir machen — breit, altes Layout */
+  .leistung{background:var(--weiss)}
+  .leistung .paket{background:var(--weiss);border:1px solid var(--sand-dunkel);border-radius:6px;padding:28px;margin-bottom:18px}
+  .leistung .paket h3{margin-bottom:.6rem;font-size:1.2rem}
+  .leistung .paket p:last-child{margin-bottom:0}
+  .leistung .paket .tag{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--grau);background:var(--sand);padding:5px 11px;border-radius:20px;white-space:nowrap;display:inline-block;margin-bottom:.8rem}
+
+  /* Sektion mit Hintergrundbild — nur Bild, kein Text darauf */
+  .section-img{
+    background:url('Website Fotos/bodenbearbeitung.jpg') center/cover no-repeat;
+    height:340px;
+    position:relative;
+  }
+  .section-img::before{content:'';position:absolute;inset:0;background:rgba(30,36,32,0.35)}
+
+  /* Trichter */
+  .trichter{background:var(--sand)}
+  .stufe{display:flex;gap:22px;align-items:flex-start;border:1px solid var(--sand-dunkel);border-radius:6px;padding:26px;margin-bottom:18px;background:var(--weiss)}
+  .stufe .num{flex:0 0 44px;height:44px;border-radius:50%;background:var(--gruen);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .stufe .preis{display:inline-block;font-size:.78rem;font-weight:700;color:var(--akzent);text-transform:uppercase;letter-spacing:.08em;margin-top:.3rem}
+  .stufe p:last-child{margin-bottom:0}
+
+  /* Ueber uns */
+  .ueber{background:var(--gruen);color:var(--sand)}
+  .ueber h2{color:#fff}
+  .ueber .zitat{font-size:1.15rem;border-left:4px solid var(--akzent);padding-left:22px;margin:1.6rem 0;opacity:.95}
+  .personen{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+  .person{background:rgba(255,255,255,.07);border-radius:6px;overflow:hidden}
+  .person .foto{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .person .foto-platz{width:100%;aspect-ratio:4/3;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(244,241,234,.4);font-size:.85rem;text-align:center}
+  .person .info{padding:24px}
+  .person h3{color:#fff;font-size:1.15rem;margin-bottom:.3rem}
+  .person .rolle{font-size:.85rem;color:var(--akzent);font-weight:700;margin-bottom:.8rem}
+  .person p{font-size:.93rem;opacity:.85;margin-bottom:0}
+
+  /* Galerie */
+  .galerie{background:var(--sand)}
+  .galerie-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:1.5rem}
+  .galerie-grid img{width:100%;height:200px;object-fit:cover;border-radius:6px;display:block}
+
+  /* Fuer wen */
+  .fuerwen{background:var(--weiss)}
+  .zwei{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .box-card{background:var(--weiss);border:1px solid var(--sand-dunkel);border-radius:6px;padding:26px}
+  .box-card h3{margin-bottom:.9rem}
+  .box-card ul{list-style:none}
+  .box-card li{padding-left:24px;position:relative;margin-bottom:.5rem;font-size:.97rem}
+  .box-card.ja li:before{content:"✓";position:absolute;left:0;color:var(--gruen-hell);font-weight:700}
+  .box-card.nein li:before{content:"×";position:absolute;left:0;color:var(--grau);font-weight:700}
+  .box-card.nein li{color:var(--grau)}
+
+  /* Kontakt */
+  .kontakt{background:var(--gruen);color:var(--sand)}
+  .kontakt h2{color:#fff}
+  .kontakt p{opacity:.92}
+  .form{margin-top:1.5rem}
+  .form-row{margin-bottom:16px}
+  .form-row label{display:block;font-size:.85rem;font-weight:700;margin-bottom:.4rem;color:var(--sand)}
+  .form-row input,.form-row textarea,.form-row select{width:100%;padding:12px 14px;border:1px solid rgba(244,241,234,.3);border-radius:4px;background:rgba(255,255,255,.08);color:#fff;font-size:1rem;font-family:inherit}
+  .form-row input::placeholder,.form-row textarea::placeholder{color:rgba(244,241,234,.5)}
+  .form-row textarea{min-height:120px;resize:vertical}
+  .form-row select{cursor:pointer}
+  .form-row select option{background:var(--gruen);color:#fff}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .btn{display:inline-block;background:var(--akzent);color:#fff;text-decoration:none;padding:15px 34px;border-radius:4px;font-weight:700;margin-top:8px;font-size:1.02rem;border:none;cursor:pointer;font-family:inherit}
+  .btn:hover{background:#a56735}
+  .form-hinweis{font-size:.85rem;opacity:.7;margin-top:1rem;margin-bottom:0}
+
+  footer{background:#243026;color:rgba(244,241,234,.55);font-size:.88rem;padding:30px 0}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{color:inherit}
+
+  @media(max-width:680px){
+    h1{font-size:2rem}
+    h2{font-size:1.45rem}
+    section{padding:52px 0}
+    .hero .wrap{padding:80px 24px 80px}
+    .hero h1{font-size:2.1rem}
+    .karten,.personen,.zwei,.form-grid,.galerie-grid{grid-template-columns:1fr}
+    .stufe{flex-direction:column;gap:14px}
+    .galerie-grid img{height:160px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap kopf">
+    <div class="logo">Hofkontor <span>· Damit Landwirte wieder Landwirt sein können</span></div>
+    <a class="kopf-tel" href="tel:+4982308536262">08230 8536262</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Wir übernehmen das Büro.<br>Damit du wieder Landwirt sein kannst.</h1>
+    <p class="lead">Von einem Landwirt, der das im eigenen Hof gelöst hat — <strong>mit KI, aber immer mit einem Menschen am Telefon.</strong></p>
+    <div class="hero-cta">
+      <a class="btn" href="#kontakt">Kostenloses Erstgespräch anfragen</a>
+    </div>
+  </div>
+</div>
+
+<section class="problem">
+  <div class="wrap">
+    <div class="kicker">Das Problem</div>
+    <h2>Zwei Dinge, die auf fast jedem gewachsenen Hof gleich sind</h2>
+
+    <div class="karten">
+      <div class="karte">
+        <span class="nr">Problem 1</span>
+        <h3>Büroarbeit bleibt liegen</h3>
+        <p>Der Tag gehört dem Stall, dem Feld, den Kunden. Die Belege sammeln sich auf dem Schreibtisch, in der Küche und auf der Toilette. Büroarbeit ist einfach nicht der Teil des Jobs, für den die meisten Landwirte angetreten sind — und kaum einer setzt sich abends um neun freiwillig hin, um Rechnungen zu sortieren, weil sich der Steuerberater auf morgen angemeldet hat.</p>
+      </div>
+      <div class="karte">
+        <span class="nr">Problem 2</span>
+        <h3>Der Steuerberater kostet, liefert aber nur Vergangenheit</h3>
+        <p>Vier- bis fünfstellige Beträge im Jahr. Und was zurückkommt, ist Monate alt, nach Steuerkonten sortiert und für das Finanzamt gemacht — nicht für dich. Man kann es abheften. Steuern kann man damit nichts.</p>
+      </div>
+    </div>
+
+    <div class="folge">
+      <p><strong>Und beides hängt zusammen:</strong> Die meisten Landwirte liefern ihre Belege nicht unsortiert ab — sie sortieren, nur auf einem viel zu umständlichen und zeitraubenden Weg. Genau das kostet Vollständigkeit und Aktualität. Und sobald der Input lückenhaft ist, wird auch die Auswertung lückenhaft. Am Ende weiß niemand, ob die Pferdepension wirklich etwas verdient oder ob die Direktvermarktung nur die Eier quersubventioniert.</p>
+    </div>
+  </div>
+</section>
+
+<section class="leistung">
+  <div class="wrap">
+    <div class="kicker">Was wir übernehmen</div>
+    <h2>Das komplette Büro — nicht nur Controlling</h2>
+    <p>Wir nehmen dir nicht nur einen Teil ab. Wir übernehmen das Büro, so wie du es brauchst. Du entscheidest, was wir machen und was du selbst behältst.</p>
+
+    <div class="paket">
+      <span class="tag">Buchhaltung & Controlling</span>
+      <h3>Buchhaltung vorbereiten und auswerten</h3>
+      <p>Belege sortieren, kategorisieren, DATEV-fähig machen. Controlling-Report je Betriebszweig — eine Seite, eine Frage: Was verdient was? Interne Verrechnungen sauber herausgerechnet. Das ist unser Standard, der bei jedem Kunden gleich abläuft.</p>
+    </div>
+
+    <div class="paket">
+      <span class="tag">Email & Posteingang</span>
+      <h3>Dein Posteingang wird sortiert</h3>
+      <p>Dein Posteingang wird sortiert — Wichtiges nach vorn, Unwichtiges weg. Behördenpost und Fristen im Blick. Du siehst nur, was wirklich deine Entscheidung braucht. Optional mit telefonischer Erreichbarkeit für einfache Anfragen.</p>
+    </div>
+
+    <div class="paket">
+      <span class="tag">KI-Workflows & Betriebs-KI</span>
+      <h3>Eine KI, die deinen Betrieb kennt</h3>
+      <p>Wir richten dir eine eigene KI ein — wie Andreas sie im eigenen Hof nutzt. Sie kennt deinen Betrieb, verwaltet deine Dokumente, überwacht Fristen und antwortet dir, wenn du was brauchst. Keine Software, die du bedienen musst — ein System, das für dich läuft.</p>
+    </div>
+
+    <div class="paket">
+      <span class="tag">Korrespondenz & Anfragen</span>
+      <h3>Anfragen und Korrespondenz — vorbereitet</h3>
+      <p>Ausgehende Korrespondenz vorbereiten: Anfragen, Angebote, Antworten auf Behördenpost. Du bekommst einen fertigen Entwurf, gibst frei, fertig. Für rechtliche Dinge wie Verträge oder Mahnungen vermitteln wir dir den richtigen Ansprechpartner.</p>
+    </div>
+
+    <div class="paket">
+      <span class="tag">Kapital & Liquidität</span>
+      <h3>Strategische Beratung — keine Anlageberatung</h3>
+      <p>Liquiditätsplanung, Investitionsentscheidungen vorbereiten, Kapitalstruktur einordnen. Strategische Begleitung, nicht mehr und nicht weniger.</p>
+    </div>
+
+
+    <p style="margin-top:1.5rem;color:var(--grau);font-size:.95rem"><strong>Was wir nicht machen:</strong> Förderanträge, Düngeverordnung, Schlagkartei, QS-/Bio-Zertifizierung. Das ist Spezialistenarbeit mit Haftungsrisiko — dafür vermitteln wir gerne.</p>
+  </div>
+</section>
+
+<section class="section-img"></section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Warum wir</div>
+    <h2>Ein Landwirt, der das im eigenen Hof gelöst hat</h2>
+    <p>Kein Stadtberater, der „Landwirtschaft versteht". Andreas geht selbst in den Stall und kennt die Woche, in der man zu nichts kommt. Jede Vorlage, jeder Workflow läuft zuerst am eigenen Hof — über mehrere sehr unterschiedliche Betriebszweige. Mit KI, die wirklich arbeitet, nicht nur auf Folien gut aussieht.</p>
+    <p>Seither arbeitet Erich Salk mit — Betriebswirt, Zahlen- und Controlling-Handwerk, eigene Beratungspraxis Aureus Consulting. Gemeinsam bringen wir, was am eigenen Hof funktioniert, auf andere Betriebe.</p>
+  </div>
+</section>
+
+<section class="trichter">
+  <div class="wrap">
+    <div class="kicker">So laufen wir ab</div>
+    <h2>Vom ersten Gespräch bis zum laufenden Betrieb</h2>
+    <p>Du entscheidest an jeder Stufe, ob es weitergeht. Keine Vertragsfalle, kein Paketzwang.</p>
+
+    <div class="stufe">
+      <div class="num">1</div>
+      <div>
+        <h3>Kostenloses Telefonat</h3>
+        <span class="preis">Kostenlos · ca. 30 Minuten</span>
+        <p>Ein unverbindliches Erstgespräch am Telefon. Andreas hört zu, wie dein Betrieb aufgestellt ist und wo es im Büro hakt. Du bekommst eine ehrliche Einschätzung, ob wir dir helfen können.</p>
+      </div>
+    </div>
+
+    <div class="stufe">
+      <div class="num">2</div>
+      <div>
+        <h3>Betriebsbesuch</h3>
+        <span class="preis">500 € · einmalig · vor Ort</span>
+        <p>Andreas kommt auf deinen Hof. Nimmt den Betrieb und das Büro unter die Lupe: Wie laufen Belege aktuell? Was kostet der Steuerberater? Wo geht Zeit verloren? Deine Wünsche werden aufgenommen.</p>
+      </div>
+    </div>
+
+    <div class="stufe">
+      <div class="num">3</div>
+      <div>
+        <h3>Analyse-Bericht</h3>
+        <span class="preis">Im Besuchspreis enthalten · 1 Woche später</span>
+        <p>Du bekommst eine schriftliche Analyse: So sieht dein Büro heute aus, so könnten wir es umbauen. Konkret, verständlich, mit nächsten Schritten.</p>
+      </div>
+    </div>
+
+    <div class="stufe">
+      <div class="num">4</div>
+      <div>
+        <h3>Büro-Umbau</h3>
+        <span class="preis">1.500–3.000 € · einmalig · je nach Betriebsgröße</span>
+        <p>Wir bauen das Büro nach unseren Standards um: Buchhaltungs-Vorbereitung, Controlling-Auswertung, Email-Struktur, KI-Workflows — je nachdem, was du brauchst.</p>
+      </div>
+    </div>
+
+    <div class="stufe">
+      <div class="num">5</div>
+      <div>
+        <h3>Laufende Steuerung</h3>
+        <span class="preis">300–500 €/Monat (wir steuern) oder 100–150 €/Monat (du steuerst selbst)</span>
+        <p>Du entscheidest: Wir übernehmen das Büro für dich laufend — oder du steuerst selbst, wir haben es nur eingerichtet. Beides ist möglich.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="galerie">
+  <div class="wrap">
+    <div class="kicker">Der Hof</div>
+    <h2>Woher wir kommen</h2>
+    <p>Andreas' Betrieb in Gablingen — Legehennen, Pferdepension, Ackerbau, Wald. Sechs Standbeine, historisch gewachsen. Hier ist das Problem entstanden, hier ist es gelöst.</p>
+    <div class="galerie-grid">
+      <img src="Website Fotos/legehennen.jpg" alt="Legehennen im Stall">
+      <img src="Website Fotos/bodenbearbeitung.jpg" alt="Bodenbearbeitung auf dem Acker">
+      <img src="Website Fotos/weizenernte.jpg" alt="Weizenernte mit Mähdrescher">
+    </div>
+  </div>
+</section>
+
+<section class="ueber">
+  <div class="wrap">
+    <div class="kicker">Wer dahintersteht</div>
+    <h2>Wir haben das nicht studiert. Wir haben es gebraucht.</h2>
+    <p>Andreas ist Landwirt in Gablingen und führt einen Familienbetrieb, der über Jahrzehnte gewachsen ist: Legehennen, Pferdepension, Direktvermarktung mit eigener Nudelproduktion, Ackerbau, Wald, Ökopunkte. Sechs Standbeine, historisch entstanden, jedes mit eigener Logik.</p>
+    <p>Irgendwann stand die einfachste Frage im Raum, auf die er keine Antwort mehr hatte: <strong>Womit verdiene ich eigentlich mein Geld?</strong> Die Steuerberaterzahlen konnten es ihm nicht sagen — sie waren nach Betrieben und Konten sortiert, nicht nach dem, was er tatsächlich macht.</p>
+    <p class="zitat">Über Jahre ist daraus eine eigene Büro- und Auswertungsstruktur entstanden — mit KI, mit einem zweiten Gehirn, mit Workflows die auch ohne Andreas laufen. Seither arbeitet Erich Salk mit — Betriebswirt, Zahlen- und Controlling-Handwerk, eigene Beratungspraxis Aureus Consulting. Gemeinsam bringen wir jetzt, was am eigenen Hof funktioniert, auf andere Betriebe.</p>
+
+    <div class="personen">
+      <div class="person">
+        <img class="foto" src="Website Fotos/andreas-am-hof.jpg" alt="Andreas Kratzer am Hof">
+        <div class="info">
+          <h3>Andreas Kratzer</h3>
+          <div class="rolle">Landwirt · KI · Strategie</div>
+          <p>Praktizierender Betriebsleiter in Gablingen. Versteht Güllegrube, Weidezaun und Stallarbeit. Versteht Nährstoffbilanz, Rationsberechnung und Entwicklungsstadien. Hat das Büro im eigenen Hof mit KI so aufgebaut, dass es auch ohne ihn läuft.</p>
+        </div>
+      </div>
+      <div class="person">
+        <div class="foto-platz">Foto von Erich folgt</div>
+        <div class="info">
+          <h3>Erich Salk</h3>
+          <div class="rolle">Unternehmensberater · Zahlen · Controlling</div>
+          <p>Betriebswirt mit eigener Beratungspraxis (Aureus Consulting). Verwandelt Steuerberaterdaten in echte Betriebssteuerung. Verantwortet Struktur und Controlling.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vortrag" style="background:var(--sand)">
+  <div class="wrap">
+    <div class="kicker">Vorträge</div>
+    <h2>KI im landwirtschaftlichen Betrieb — live vom eigenen Hof</h2>
+    <p>Andreas hält Vorträge bei BBV-Ortsverbänden, Maschinenringen und Landwirtschaftsvereinen. Themen: KI im landwirtschaftlichen Büro, Bitcoin als Baustein für die Kapitalbildung. Formate und Dauer auf Anfrage.</p>
+    <a class="btn" href="#kontakt" style="margin-top:8px">Vortrag anfragen</a>
+  </div>
+</section>
+
+<section class="fuerwen">
+  <div class="wrap">
+    <div class="kicker">Ehrlichkeit vorweg</div>
+    <h2>Wir passen nicht zu jedem</h2>
+    <div class="zwei">
+      <div class="box-card ja">
+        <h3>Das bist du</h3>
+        <ul>
+          <li>Dein Betrieb hat zwei oder mehr Standbeine</li>
+          <li>Gewachsen über die Jahre</li>
+          <li>Geld ist da, aber du weißt nicht genau, aus welcher Ecke</li>
+          <li>Du steckst zu tief im Tagesgeschäft fürs Büro</li>
+          <li>Du willst robuster werden, nicht um jeden Preis größer</li>
+        </ul>
+      </div>
+      <div class="box-card nein">
+        <h3>Das bist du nicht</h3>
+        <ul>
+          <li>Reiner Ackerbaubetrieb mit einem Standbein</li>
+          <li>Du suchst Hilfe bei Förderanträgen und Agrarrecht</li>
+          <li>Du willst nur eine Software zum Selbstbedienen</li>
+          <li>Du willst nur die Steuerlast drücken</li>
+          <li>Du willst Zahlen sehen, aber nichts ändern</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <div class="kicker">Erster Schritt</div>
+    <h2>Reden wir eine halbe Stunde</h2>
+    <p>Kein Angebot am Telefon, keine Präsentation. Ein Gespräch darüber, wie dein Betrieb aufgestellt ist und ob das, was wir machen, dir überhaupt etwas bringt. Du bekommst eine persönliche Rückmeldung von Andreas.</p>
+
+    <form class="form" action="mailto:info@hofkontor.de" method="post" enctype="text/plain">
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="Name" placeholder="Max Mustermann" required>
+        </div>
+        <div class="form-row">
+          <label for="betrieb">Betrieb / Hofname</label>
+          <input type="text" id="betrieb" name="Betrieb" placeholder="Gut Mustermann">
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="email">Email oder Telefon</label>
+          <input type="text" id="email" name="Kontakt" placeholder="Wie können wir dich erreichen?" required>
+        </div>
+        <div class="form-row">
+          <label for="zweige">Betriebszweige</label>
+          <select id="zweige" name="Betriebszweige">
+            <option value="">Wie viele Standbeine hat dein Betrieb?</option>
+            <option value="1">Eins</option>
+            <option value="2">Zwei</option>
+            <option value="3">Drei</option>
+            <option value="4+">Vier oder mehr</option>
+            <option value="unsicher">Weiß ich nicht genau</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="nachricht">Was beschäftigt dich?</label>
+        <textarea id="nachricht" name="Nachricht" placeholder="Kurz: Wo hakt es im Büro? Was nervt dich am meisten?"></textarea>
+      </div>
+      <button type="submit" class="btn">Gespräch anfragen</button>
+      <p class="form-hinweis">Wir melden uns persönlich — meist innerhalb von 2 Werktagen. Deine Daten werden nicht weitergegeben.</p>
+    </form>
+
+    <p style="margin-top:2rem;font-size:.9rem;opacity:.7">Oder direkt anrufen: <a href="tel:+4982308536262" style="color:inherit;text-decoration:underline">08230 8536262</a> · Oder schreiben an <a href="mailto:info@hofkontor.de" style="color:inherit;text-decoration:underline">info@hofkontor.de</a></p>
+    <p style="font-size:.9rem;opacity:.7;margin-bottom:0">Wir nehmen bewusst nur wenige Betriebe an. Lieber ein Hof richtig als fünf nebenher.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Hofkontor · Andreas Kratzer · Gablingen, Bayern</div>
+    <div>
+      <a href="tel:+4982308536262">08230 8536262</a> ·
+      <a href="mailto:info@hofkontor.de">info@hofkontor.de</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
