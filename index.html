@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hofkontor – Wir übernehmen das Büro. Damit du wieder Landwirt sein kannst.</title>
+<title>SAK Agrar – Wir übernehmen das Büro. Damit du wieder Landwirt sein kannst.</title>
 <meta name="description" content="Wir übernehmen das Büro für Landwirte: Buchhaltung, Controlling, Email-Posteingang, KI-Workflows, Betriebs-KI. Von einem Landwirt, der das im eigenen Hof gelöst hat.">
 <style>
   :root{
@@ -28,10 +28,9 @@
   .kicker{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;color:var(--akzent);margin-bottom:1rem}
 
   /* Kopf */
-  header{background:var(--gruen);color:var(--sand);padding:24px 0}
+  header{background:var(--gruen);color:var(--sand);padding:20px 0}
   .kopf{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-  .logo{font-weight:700;letter-spacing:.02em;font-size:1.1rem}
-  .logo span{opacity:.6;font-weight:400}
+  .logo-svg{display:block}
   .kopf-tel{color:var(--sand);text-decoration:none;font-weight:700;font-size:.92rem;white-space:nowrap;border-bottom:1px solid rgba(244,241,234,.4)}
 
   /* Header mit Bild */
@@ -150,7 +149,14 @@
 
 <header>
   <div class="wrap kopf">
-    <div class="logo">Hofkontor <span>· Damit Landwirte wieder Landwirt sein können</span></div>
+    <!-- SAK Agrar Logo (Variante B — Wortmarke) -->
+    <a href="/" class="logo-svg" aria-label="SAK Agrar Startseite">
+      <svg width="170" height="52" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+        <text x="130" y="36" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#f4f1ea" letter-spacing="8">SAK</text>
+        <line x1="95" y1="44" x2="165" y2="44" stroke="#d4995e" stroke-width="1.5"/>
+        <text x="130" y="58" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="500" fill="#d4995e" letter-spacing="9">AGRAR</text>
+      </svg>
+    </a>
     <a class="kopf-tel" href="tel:+4982308536262">08230 8536262</a>
   </div>
 </header>
@@ -380,7 +386,7 @@
     <h2>Reden wir eine halbe Stunde</h2>
     <p>Kein Angebot am Telefon, keine Präsentation. Ein Gespräch darüber, wie dein Betrieb aufgestellt ist und ob das, was wir machen, dir überhaupt etwas bringt. Du bekommst eine persönliche Rückmeldung von Andreas.</p>
 
-    <form class="form" action="mailto:info@hofkontor.de" method="post" enctype="text/plain">
+    <form class="form" action="mailto:info@sak-agrar.de" method="post" enctype="text/plain">
       <div class="form-grid">
         <div class="form-row">
           <label for="name">Name</label>
@@ -416,17 +422,17 @@
       <p class="form-hinweis">Wir melden uns persönlich — meist innerhalb von 2 Werktagen. Deine Daten werden nicht weitergegeben.</p>
     </form>
 
-    <p style="margin-top:2rem;font-size:.9rem;opacity:.7">Oder direkt anrufen: <a href="tel:+4982308536262" style="color:inherit;text-decoration:underline">08230 8536262</a> · Oder schreiben an <a href="mailto:info@hofkontor.de" style="color:inherit;text-decoration:underline">info@hofkontor.de</a></p>
+    <p style="margin-top:2rem;font-size:.9rem;opacity:.7">Oder direkt anrufen: <a href="tel:+4982308536262" style="color:inherit;text-decoration:underline">08230 8536262</a> · Oder schreiben an <a href="mailto:info@sak-agrar.de" style="color:inherit;text-decoration:underline">info@sak-agrar.de</a></p>
     <p style="font-size:.9rem;opacity:.7;margin-bottom:0">Wir nehmen bewusst nur wenige Betriebe an. Lieber ein Hof richtig als fünf nebenher.</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div>Hofkontor · Andreas Kratzer · Gablingen, Bayern</div>
+    <div>SAK Agrar · Andreas Kratzer · Gablingen, Bayern</div>
     <div>
       <a href="tel:+4982308536262">08230 8536262</a> ·
-      <a href="mailto:info@hofkontor.de">info@hofkontor.de</a>
+      <a href="mailto:info@sak-agrar.de">info@sak-agrar.de</a>
     </div>
   </div>
 </footer>
