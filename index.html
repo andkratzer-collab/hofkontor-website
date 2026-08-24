@@ -30,7 +30,11 @@
   /* Kopf */
   header{background:var(--gruen);color:var(--sand);padding:14px 0}
   .kopf{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:nowrap}
-  .logo-svg{display:block;flex:0 0 auto;margin:0;padding:0;text-decoration:none}
+  /* Logo */
+  .logo-svg{display:block;flex:0 0 auto;margin:0;padding:0;text-decoration:none;line-height:1}
+  .logo-sak{display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:28px;color:var(--sand);letter-spacing:5px}
+  .logo-line{display:block;width:72px;height:1.5px;background:var(--akzent);margin:3px 0}
+  .logo-agrar{display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:500;font-size:11px;color:var(--akzent);letter-spacing:6px}
   .kopf-tel{color:var(--sand);text-decoration:none;font-weight:700;font-size:.92rem;white-space:nowrap;border-bottom:1px solid rgba(244,241,234,.4);flex:0 0 auto}
 
   /* Header mit Bild */
@@ -143,11 +147,15 @@
     .stufe{flex-direction:column;gap:14px}
     .galerie-grid img{height:160px}
     .kopf{gap:8px}
-    .logo-svg svg{width:260px !important;height:60px !important}
+    .logo-sak{font-size:22px}
+    .logo-agrar{font-size:10px}
+    .logo-line{width:60px}
     .kopf-tel{font-size:.85rem}
   }
   @media(max-width:380px){
-    .logo-svg svg{width:220px !important;height:50px !important}
+    .logo-sak{font-size:19px}
+    .logo-agrar{font-size:9px}
+    .logo-line{width:52px}
     .kopf-tel{font-size:.78rem}
   }
 </style>
@@ -156,13 +164,11 @@
 
 <header>
   <div class="wrap kopf">
-    <!-- SAK Agrar Logo (Variante B — Wortmarke, linksbündig) -->
+    <!-- SAK Agrar Logo als HTML-Text (pixelgenau linksbündig) -->
     <a href="/" class="logo-svg" aria-label="SAK Agrar Startseite">
-      <svg width="340" height="78" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="36" font-family="'Helvetica Neue', Arial, sans-serif" font-size="38" font-weight="700" fill="#f4f1ea" letter-spacing="8">SAK</text>
-        <line x1="0" y1="44" x2="75" y2="44" stroke="#d4995e" stroke-width="1.5"/>
-        <text x="0" y="58" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" fill="#d4995e" letter-spacing="9">AGRAR</text>
-      </svg>
+      <span class="logo-sak">SAK</span>
+      <span class="logo-line"></span>
+      <span class="logo-agrar">AGRAR</span>
     </a>
     <a class="kopf-tel" href="tel:+4982308536262">08230 8536262</a>
   </div>
