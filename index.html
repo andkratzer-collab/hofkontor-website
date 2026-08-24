@@ -28,10 +28,10 @@
   .kicker{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;color:var(--akzent);margin-bottom:1rem}
 
   /* Kopf */
-  header{background:var(--gruen);color:var(--sand);padding:20px 0}
-  .kopf{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-  .logo-svg{display:block}
-  .kopf-tel{color:var(--sand);text-decoration:none;font-weight:700;font-size:.92rem;white-space:nowrap;border-bottom:1px solid rgba(244,241,234,.4)}
+  header{background:var(--gruen);color:var(--sand);padding:14px 0}
+  .kopf{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:nowrap}
+  .logo-svg{display:block;flex:0 0 auto}
+  .kopf-tel{color:var(--sand);text-decoration:none;font-weight:700;font-size:.92rem;white-space:nowrap;border-bottom:1px solid rgba(244,241,234,.4);flex:0 0 auto}
 
   /* Header mit Bild */
   .hero{
@@ -142,6 +142,13 @@
     .karten,.personen,.zwei,.form-grid,.galerie-grid{grid-template-columns:1fr}
     .stufe{flex-direction:column;gap:14px}
     .galerie-grid img{height:160px}
+    .kopf{gap:8px}
+    .logo-svg svg{width:200px !important;height:46px !important}
+    .kopf-tel{font-size:.85rem}
+  }
+  @media(max-width:380px){
+    .logo-svg svg{width:170px !important;height:40px !important}
+    .kopf-tel{font-size:.78rem}
   }
 </style>
 </head>
@@ -151,7 +158,7 @@
   <div class="wrap kopf">
     <!-- SAK Agrar Logo (Variante B — Wortmarke) -->
     <a href="/" class="logo-svg" aria-label="SAK Agrar Startseite">
-      <svg width="240" height="68" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+      <svg width="280" height="64" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
         <text x="130" y="36" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" fill="#f4f1ea" letter-spacing="8">SAK</text>
         <line x1="95" y1="44" x2="165" y2="44" stroke="#d4995e" stroke-width="1.5"/>
         <text x="130" y="58" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="500" fill="#d4995e" letter-spacing="9">AGRAR</text>
