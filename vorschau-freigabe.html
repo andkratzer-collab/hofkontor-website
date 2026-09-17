@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SAK Agrar – Wir übernehmen das Büro. Damit du wieder Landwirt sein kannst.</title>
+<meta name="description" content="Wir übernehmen das Büro für Landwirte: Buchhaltung, Controlling, Email-Posteingang, KI-Workflows, Betriebs-KI. Von einem Landwirt, der das im eigenen Hof gelöst hat.">
+<style>
+  :root{
+    --gruen:#2f4232;
+    --gruen-hell:#4a6650;
+    --sand:#f4f1ea;
+    --sand-dunkel:#e6e0d4;
+    --text:#1f2420;
+    --grau:#6b6f69;
+    --akzent:#b8763e;
+    --weiss:#fdfcfa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--weiss);line-height:1.65;font-size:17px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{line-height:1.25;font-weight:700}
+  h1{font-size:2.6rem;letter-spacing:-0.02em}
+  h2{font-size:1.75rem;margin-bottom:1.2rem;letter-spacing:-0.01em}
+  h3{font-size:1.15rem;margin-bottom:.5rem}
+  p{margin-bottom:1.1rem}
+  section{padding:72px 0}
+  .kicker{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;color:var(--akzent);margin-bottom:1rem}
+
+  /* Kopf */
+  header{background:var(--gruen);color:var(--sand);padding:14px 0}
+  .kopf{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:nowrap}
+  /* Logo */
+  .logo-svg{display:block;flex:0 0 auto;margin:0;padding:0;text-decoration:none;line-height:1}
+  .logo-sak{display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:28px;color:var(--sand);letter-spacing:5px}
+  .logo-line{display:block;width:72px;height:1.5px;background:var(--akzent);margin:3px 0}
+  .logo-agrar{display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:500;font-size:11px;color:var(--akzent);letter-spacing:6px}
+  .kopf-tel{color:var(--sand);text-decoration:none;font-weight:700;font-size:.92rem;white-space:nowrap;border-bottom:1px solid rgba(244,241,234,.4);flex:0 0 auto}
+
+  /* Header mit Bild */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    color:#fff;
+    padding:0;
+  }
+  .hero-img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:70% 60%;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(rgba(30,36,32,0.45),rgba(30,36,32,0.25));
+    z-index:1;
+  }
+  .hero .wrap{position:relative;z-index:2;padding:120px 24px 120px}
+  .hero h1{color:#fff;margin-bottom:1rem;font-size:2.8rem}
+  .hero .lead{font-size:1.15rem;opacity:.9;max-width:34rem;color:rgba(255,255,255,.92)}
+  .hero .lead strong{color:#fff}
+  .hero-cta{margin-top:1.5rem}
+  .hero .btn{display:inline-block;background:var(--akzent);color:#fff;text-decoration:none;padding:14px 32px;border-radius:4px;font-weight:700;font-size:1.02rem}
+  .hero .btn:hover{background:#a56735}
+
+  /* Problem */
+  .problem{background:var(--sand)}
+  .karten{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .karte{background:var(--weiss);border:1px solid var(--sand-dunkel);border-radius:6px;padding:26px}
+  .karte .nr{font-size:.8rem;font-weight:700;color:var(--akzent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem;display:block}
+  .karte p:last-child{margin-bottom:0}
+  .folge{margin-top:26px;padding:22px 26px;border-left:4px solid var(--akzent);background:var(--weiss);border-radius:0 6px 6px 0}
+  .folge p{margin-bottom:0;font-size:1.05rem}
+
+  /* Was wir machen — breit, altes Layout */
+  .leistung{background:var(--weiss)}
+  .leistung .paket{background:var(--weiss);border:1px solid var(--sand-dunkel);border-radius:6px;padding:28px;margin-bottom:18px}
+  .leistung .paket h3{margin-bottom:.6rem;font-size:1.2rem}
+  .leistung .paket p:last-child{margin-bottom:0}
+  .leistung .paket .tag{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--grau);background:var(--sand);padding:5px 11px;border-radius:20px;white-space:nowrap;display:inline-block;margin-bottom:.8rem}
+
+  /* Sektion mit Hintergrundbild — nur Bild, kein Text darauf */
+  .section-img{
+    background:url('Website Fotos/bodenbearbeitung.jpg') center/cover no-repeat;
+    height:340px;
+    position:relative;
+  }
+  .section-img::before{content:'';position:absolute;inset:0;background:rgba(30,36,32,0.35)}
+
+  /* Trichter */
+  .trichter{background:var(--sand)}
+  .stufe{display:flex;gap:22px;align-items:flex-start;border:1px solid var(--sand-dunkel);border-radius:6px;padding:26px;margin-bottom:18px;background:var(--weiss)}
+  .stufe .num{flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:var(--gruen);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .stufe .preis{display:inline-block;font-size:.78rem;font-weight:700;color:var(--akzent);text-transform:uppercase;letter-spacing:.08em;margin-top:.3rem}
+  .stufe p:last-child{margin-bottom:0}
+
+  /* Ueber uns */
+  .ueber{background:var(--gruen);color:var(--sand)}
+  .ueber h2{color:#fff}
+  .ueber .zitat{font-size:1.15rem;border-left:4px solid var(--akzent);padding-left:22px;margin:1.6rem 0;opacity:.95}
+  .personen{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+  .person{background:rgba(255,255,255,.07);border-radius:6px;overflow:hidden}
+  .person .foto{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .person .foto-platz{width:100%;aspect-ratio:4/3;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(244,241,234,.4);font-size:.85rem;text-align:center}
+  .person .info{padding:24px}
+  .person h3{color:#fff;font-size:1.15rem;margin-bottom:.3rem}
+  .person .rolle{font-size:.85rem;color:var(--akzent);font-weight:700;margin-bottom:.8rem}
+  .person p{font-size:.93rem;opacity:.85;margin-bottom:0}
+
+  /* Galerie */
+  .galerie{background:var(--sand)}
+  .galerie-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:1.5rem}
+  .galerie-grid img{width:100%;height:200px;object-fit:cover;border-radius:6px;display:block}
+
+  /* Fuer wen */
+  .fuerwen{background:var(--weiss)}
+  .zwei{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .box-card{background:var(--weiss);border:1px solid var(--sand-dunkel);border-radius:6px;padding:26px}
+  .box-card h3{margin-bottom:.9rem}
+  .box-card ul{list-style:none}
+  .box-card li{padding-left:24px;position:relative;margin-bottom:.5rem;font-size:.97rem}
+  .box-card.ja li:before{content:"✓";position:absolute;left:0;color:var(--gruen-hell);font-weight:700}
+  .box-card.nein li:before{content:"×";position:absolute;left:0;color:var(--grau);font-weight:700}
+  .box-card.nein li{color:var(--grau)}
+
+  /* Kontakt */
+  .kontakt{background:var(--gruen);color:var(--sand)}
+  .kontakt h2{color:#fff}
+  .kontakt p{opacity:.92}
+  .form{margin-top:1.5rem}
+  .form-row{margin-bottom:16px}
+  .form-row label{display:block;font-size:.85rem;font-weight:700;margin-bottom:.4rem;color:var(--sand)}
+  .form-row input,.form-row textarea,.form-row select{width:100%;padding:12px 14px;border:1px solid rgba(244,241,234,.3);border-radius:4px;background:rgba(255,255,255,.08);color:#fff;font-size:1rem;font-family:inherit}
+  .form-row input::placeholder,.form-row textarea::placeholder{color:rgba(244,241,234,.5)}
+  .form-row textarea{min-height:120px;resize:vertical}
+  .form-row select{cursor:pointer}
+  .form-row select option{background:var(--gruen);color:#fff}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .btn{display:inline-block;background:var(--akzent);color:#fff;text-decoration:none;padding:15px 34px;border-radius:4px;font-weight:700;margin-top:8px;font-size:1.02rem;border:none;cursor:pointer;font-family:inherit}
+  .btn:hover{background:#a56735}
+  .form-hinweis{font-size:.85rem;opacity:.7;margin-top:1rem;margin-bottom:0}
+
+  footer{background:#243026;color:rgba(244,241,234,.55);font-size:.88rem;padding:30px 0}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{color:inherit}
+
+  @media(max-width:680px){
+    h1{font-size:2rem}
+    h2{font-size:1.45rem}
+    section{padding:52px 0}
+    .hero .wrap{padding:80px 24px 80px}
+    .hero-img{object-position:center center !important}
+    .hero h1{font-size:2.1rem}
+    .karten,.personen,.zwei,.form-grid,.galerie-grid{grid-template-columns:1fr}
+    .stufe{flex-direction:column;gap:14px}
+    .galerie-grid img{height:160px}
+    .kopf{gap:8px}
+    .logo-sak{font-size:22px}
+    .logo-agrar{font-size:10px}
+    .logo-line{width:60px}
+    .kopf-tel{font-size:.85rem}
+  }
+  @media(max-width:380px){
+    .logo-sak{font-size:19px}
+    .logo-agrar{font-size:9px}
+    .logo-line{width:52px}
+    .kopf-tel{font-size:.78rem}
+  }
+
+.entwurf{background:#fff2cf;color:#392e1b;padding:16px 0;font-size:.9rem}
+.redaktion{font-size:.88rem;padding:14px;background:#fff2cf;color:#392e1b;margin-top:14px}
+.betriebski{background:var(--sand)}.einleitung{font-size:1.15rem}
+.ablaufzeile{padding:22px 0;border-top:1px solid var(--sand-dunkel)}.ablaufzeile p:last-child{margin-bottom:0}
+.klein{font-size:.94rem;color:#555b54}.grundangebot{border-color:var(--gruen)!important}
+.btn{background:#895126!important}.kicker,.stufe .preis{color:#895126}
+.ueber .kicker,.kontakt .kicker,.person .rolle{color:#dfb37c}
+a:focus-visible{outline:3px solid #d69a53;outline-offset:5px}
+.ueber .galerie-grid{margin-top:30px}.logo-svg{min-height:44px}
+@media(max-width:380px){.btn{padding:14px 18px;width:100%;text-align:center}.hero h1{font-size:1.9rem}}
+.person-link{display:inline-flex;align-items:center;min-height:44px;margin-top:14px;color:var(--sand);text-underline-offset:4px;overflow-wrap:anywhere}
+.person-link:hover,.kontaktwege a:hover{color:#dfb37c}
+.person .foto{height:auto}
+.person .foto-erich{object-position:60% 40%}
+.kontaktwege a{display:inline-block;min-height:44px;color:var(--sand);text-underline-offset:4px;overflow-wrap:anywhere}
+.preishinweise{font-size:.94rem;padding-top:12px}
+.preishinweise p:last-child{margin-bottom:0}
+</style>
+</head>
+<body id="start">
+<aside class="entwurf"><div class="wrap"><strong>Vorschau zur Freigabe · noch nicht für Kunden bestimmt</strong><br>Erichs Foto, eure Internetadressen und die vereinbarten Preisdetails sind ergänzt. Domain und E-Mail sind noch nicht eingerichtet; Impressum und Datenschutz sind vor dem Onlinegang zu vervollständigen.</div></aside>
+<header>
+  <div class="wrap kopf">
+    <!-- SAK Agrar Logo als HTML-Text (pixelgenau linksbündig) -->
+    <a href="#start" class="logo-svg" aria-label="SAK Agrar Startseite">
+      <span class="logo-sak">SAK</span>
+      <span class="logo-line"></span>
+      <span class="logo-agrar">AGRAR</span>
+    </a>
+    <a class="kopf-tel" href="tel:+4982308536262">08230 8536262</a>
+  </div>
+</header><div class="hero">
+  <img class="hero-img" src="Website Fotos/header-weizenernte.jpg" alt="Weizenernte mit Mähdrescher">
+  <div class="wrap">
+    <h1>Wir übernehmen das Büro.<br>Damit du wieder Landwirt sein kannst.</h1>
+    <p class="lead">Weniger Büroarbeit. Verständliche Zahlen für jeden Betriebszweig. Und auf Wunsch deine eigene, betreute Betriebs-KI. <strong>Mit einem Menschen als Ansprechpartner.</strong></p>
+    <div class="hero-cta">
+      <a class="btn" href="#kontakt">Kostenloses Erstgespräch anfragen</a>
+    </div>
+  </div>
+</div>
+<main>
+<section class="problem"><div class="wrap">
+<div class="kicker">Das Problem</div><h2>Das Büro bleibt liegen. Der Überblick auch.</h2>
+<div class="karten"><div class="karte"><h3>Büroarbeit bleibt liegen</h3><p>Der Tag gehört dem Stall, dem Feld, den Kunden. Die Belege sammeln sich auf dem Schreibtisch, in der Küche und auf der Toilette. Und abends um neun sitzt du doch noch davor, weil sich der Steuerberater auf morgen angemeldet hat.</p></div>
+<div class="karte"><h3>Die Buchhaltung ist gemacht. Aber was lohnt sich?</h3><p>Die steuerliche Auswertung beantwortet nicht automatisch deine Fragen zu Eierproduktion, Pferdepension oder Direktvermarktung. Wir bereiten die Unterlagen für deinen Steuerberater vor und machen daraus einen verständlichen Überblick für deine Entscheidungen.</p></div></div>
+<p style="margin-top:26px"><strong>Ordnung allein reicht nicht.</strong> Erst wenn die Unterlagen vollständig und richtig zugeordnet sind, wird daraus ein brauchbarer Überblick: Was verdient welcher Betriebszweig – und wo musst du genauer hinschauen?</p>
+</div></section>
+<section class="leistung" id="leistungen"><div class="wrap">
+<div class="kicker">Was wir übernehmen</div><h2>Das Büro entlasten. Den Betrieb im Blick behalten.</h2>
+<p>Du entscheidest, was du abgeben möchtest. Unser Grundangebot beginnt mit einem gut organisierten Büro: klare Ablagen und einfache Arbeitsabläufe. Darauf bauen die Vorbereitung deiner Buchhaltungsunterlagen und eine verständliche Auswertung auf. Weitere Aufgaben vereinbaren wir passend zu deinem Hof.</p>
+<div class="paket grundangebot"><span class="tag">Unser Grundangebot</span><h3>Büro organisieren. Abläufe vereinfachen.</h3><p>Wir schauen uns dein Büro so an, wie du darin arbeitest: Wo landet die Post? Wo liegen Belege und Verträge? Was wird doppelt abgelegt, was immer wieder gesucht?</p><p>Gemeinsam ordnen wir die Papierablage und die digitalen Ordner, legen feste Plätze und einfache Abläufe fest. Du weißt, was noch zu erledigen ist, wo deine Unterlagen liegen und wie sie zum Steuerberater kommen. Wir richten die Struktur mit dir ein und zeigen dir, wie du sie im Alltag beibehältst.</p></div>
+<div class="paket grundangebot"><h3>Buchhaltung vorbereiten. Betriebszweige auswerten.</h3><p>Wir ordnen Belege, bereiten sie für die Übergabe an deinen Steuerberater auf und werten Einnahmen und Kosten je Betriebszweig aus. Interne Verrechnungen werden berücksichtigt, damit du nicht dieselben Umsätze doppelt zählst.</p><p><strong>Das Ergebnis:</strong> ein verständlicher Überblick darüber, was die einzelnen Zweige beitragen und wo Handlungsbedarf besteht. Wir ergänzen deinen Steuerberater – wir ersetzen keine Steuerberatung.</p></div>
+<h3 style="margin:32px 0 18px">Auf Wunsch übernehmen wir mehr</h3>
+<div class="paket"><span class="tag">Zusätzlich vereinbar</span><h3>Posteingang und Korrespondenz</h3><p>Wichtiges nach vorn, Antworten vorbereitet. Wir sortieren deinen Posteingang, behalten vereinbarte Fristen im Blick und bereiten Antworten vor. Du prüfst und gibst frei. Telefonische Erreichbarkeit für einfache Anfragen ist nach Absprache möglich.</p></div>
+<div class="paket"><span class="tag">Zusätzlich vereinbar</span><h3>Liquidität und Entscheidungen</h3><p>Liquidität planen, Investitionen durchrechnen und die Entwicklung deines Betriebs besprechen. Strategische Begleitung – keine Anlage-, Rechts- oder Steuerberatung.</p></div>
+<p class="klein"><strong>Was wir nicht machen:</strong> Förderanträge, Düngeverordnung, Schlagkartei, QS-/Bio-Zertifizierung. Dafür sind Spezialisten die richtigen Ansprechpartner.</p>
+</div></section>
+<section class="betriebski" id="betriebski"><div class="wrap">
+<div class="kicker">Ein eigener Leistungsbaustein</div><h2>Deine Betriebs-KI.<br>Wir richten sie ein und halten sie aktuell.</h2>
+<p class="einleitung">Du willst KI im Betrieb nutzen, aber dich nicht mit Programmen, Einstellungen und Updates beschäftigen? Das übernehmen wir.</p>
+<p>Wir richten dir einen KI-Assistenten passend zu deinem Hof ein: mit den Betriebsinformationen und Dokumenten, die du dafür freigibst, und den Aufgaben, bei denen du Unterstützung brauchst. Wir zeigen dir, wie du damit arbeitest, und bleiben dein Ansprechpartner.</p>
+<div class="ablaufzeile"><h3>Einrichten und einweisen</h3><p>Gemeinsam legen wir die ersten Aufgaben fest, richten Zugänge und Ablage ein und üben mit dir an Beispielen aus deinem Alltag.</p></div>
+<div class="ablaufzeile"><h3>Dein Hofwissen wird zur erledigten Vorarbeit</h3><p>Wir verbinden eine geordnete Wissensablage – beispielsweise mit Obsidian – mit deiner KI und den vereinbarten Programmen. So findet der Assistent nicht nur Informationen: Er stellt passende Unterlagen zusammen, schreibt Antworten und legt sie samt Anhängen als Entwurf in deinem E-Mail-Postfach ab.</p><p><strong>Du prüfst den fertigen Entwurf und schickst ihn ab.</strong> Welche Schritte selbstständig laufen, legen wir bei der Einrichtung fest. Fehlt eine Unterlage oder ist die Zuordnung unklar, fragt die KI nach.</p></div>
+<div class="ablaufzeile"><h3>Wir betreuen die Technik</h3><p>Updates, vereinbarte Funktionskontrollen und Fehlerbehebung am eingerichteten System gehören zur laufenden Betreuung. Neue Aufgaben, zusätzliche Anbindungen und größere Erweiterungen vereinbaren wir separat.</p></div>
+<p><strong>Du behältst die Kontrolle.</strong> Wichtige Entscheidungen und Freigaben bleiben bei dir. Neue Betriebsinformationen kommen von dir oder aus den vereinbarten Quellen – dein Assistent weiß nicht automatisch, was sich auf dem Hof geändert hat.</p>
+<p><strong>Auch ohne laufende Bürobetreuung nutzbar.</strong> Einrichtung einmalig, technische Betreuung laufend. Den Umfang und die Kosten vereinbaren wir vor dem Start.</p>
+<a class="btn" href="#kontakt">Über meine Betriebs-KI sprechen</a>
+</div></section>
+<section id="beispiel"><div class="wrap"><div class="kicker">So kann deine Betriebs-KI arbeiten</div><h2>Der Getreidehändler braucht Unterlagen.<br>Deine KI bereitet alles vor.</h2>
+<p>Eine E-Mail kommt: Für die Getreideabrechnung fehlen noch Unterlagen. Statt selbst den Schriftwechsel und verschiedene Ordner zu durchsuchen, gibst du deiner Betriebs-KI den Auftrag:</p>
+<p class="einleitung"><strong>„Schau nach, was der Getreidehändler braucht, und bereite die Antwort mit den passenden Unterlagen als E-Mail-Entwurf vor.“</strong></p>
+<div class="ablaufzeile"><h3>Sie liest die Anfrage und kennt den Zusammenhang.</h3><p>Die KI gleicht die Nachricht mit dem hinterlegten Hofwissen und dem bisherigen Schriftwechsel ab. Was wird angefordert? Für welchen Betrieb? Was wurde bereits übermittelt?</p></div>
+<div class="ablaufzeile"><h3>Sie stellt die Unterlagen zusammen und schreibt die Antwort.</h3><p>Sie sucht die passenden Dokumente in den freigegebenen Ablagen und legt eine Antwort samt Anhängen direkt im Entwurfsordner deines E-Mail-Postfachs ab. Fehlt etwas oder gibt es widersprüchliche Angaben, fragt sie nach, statt zu raten.</p></div>
+<div class="ablaufzeile"><h3>Du prüfst und schickst ab.</h3><p>Du öffnest den vorbereiteten Entwurf, kontrollierst Empfänger, Angaben und Anhänge und klickst auf „Senden“. Kein Zusammensuchen, kein Abtippen, kein neuer Text von vorne.</p></div>
+<p><strong>Nicht nur eine KI, die Antworten gibt. Sondern ein Assistent, der die Arbeit bis zu deiner Prüfung vorbereitet.</strong></p>
+<p class="klein">Beispiel für einen gemeinsam eingerichteten Ablauf, angelehnt an einen Vorgang aus unserem Betrieb. Voraussetzung sind freigegebene Datenquellen und eine passende E-Mail-Anbindung. Versand erst durch dich.</p>
+</div></section>
+<section class="trichter">
+  <div class="wrap">
+    <div class="kicker">So arbeiten wir zusammen</div>
+    <h2>Vom ersten Gespräch bis zum laufenden Betrieb</h2>
+    <p>Der Weg für die Bürobetreuung. Du entscheidest an jeder Stufe, ob es weitergeht. Für eine separat eingerichtete Betriebs-KI vereinbaren wir einen eigenen Umfang.</p>
+
+    <div class="stufe">
+      <div class="num">1</div>
+      <div>
+        <h3>Kostenloses Telefonat</h3>
+        <span class="preis">Kostenlos · ca. 30 Minuten</span>
+        <p>Ein unverbindliches Erstgespräch am Telefon. Andreas hört zu, wie dein Betrieb aufgestellt ist und wo es im Büro hakt. Du bekommst eine ehrliche Einschätzung, ob wir dir helfen können.</p>
+      </div>
+    </div>
+
+    <div class="stufe">
+      <div class="num">2</div>
+      <div>
+        <h3>Betriebsbesuch</h3>
+        <span class="preis">500 € netto · einmalig · vor Ort</span>
+        <p>Andreas kommt auf deinen Hof und schaut sich mit dir das Büro, die Papierablage, digitalen Ordner und täglichen Arbeitsabläufe an. Wo landet die Post? Wie gelangen Belege zum Steuerberater? Was suchst du immer wieder, und wo geht Zeit verloren? Wir nehmen deine Wünsche auf und klären, welche Struktur dir die Arbeit erleichtert.</p>
+      </div>
+    </div>
+
+    <div class="stufe">
+      <div class="num">3</div>
+      <div>
+        <h3>Analyse-Bericht</h3>
+        <span class="preis">Im Besuchspreis enthalten · 1 Woche später</span>
+        <p>Du bekommst eine schriftliche Analyse: So sieht dein Büro heute aus, so könnten wir es umbauen. Konkret, verständlich, mit nächsten Schritten.</p>
+      </div>
+    </div>
+
+    <div class="stufe">
+      <div class="num">4</div>
+      <div>
+        <h3>Büro-Umbau</h3>
+        <span class="preis">1.500–3.000 € netto · einmalig · Orientierungsrahmen</span>
+        <p>Wir setzen die vereinbarte Bürostruktur gemeinsam mit dir um: Papierablage und digitale Ordner ordnen, feste Plätze für Unterlagen schaffen und einfache Abläufe für neue Post, offene Aufgaben und die Belegübergabe festlegen. Wir zeigen dir, wie du damit im Alltag arbeitest, und richten darauf aufbauend die Buchhaltungs-Vorbereitung und Auswertung ein. Die laufende Bearbeitung deines Posteingangs, Betriebs-KI und weitere Aufgaben vereinbaren wir bei Bedarf zusätzlich.</p>
+      </div>
+    </div>
+
+    <div class="stufe">
+      <div class="num">5</div>
+      <div>
+        <h3>Laufende Steuerung</h3>
+        <span class="preis">300–500 € netto/Monat · Orientierungsrahmen</span>
+        <p>Wir bereiten deine Belege für den Steuerberater vor, werten monatlich nach Betriebszweigen aus und besprechen die Ergebnisse kurz mit dir. Den Belegumfang und die enthaltenen Aufgaben halten wir im Angebot fest. Posteingang, Betriebs-KI und weitere Leistungen vereinbaren wir separat.</p>
+      </div>
+    </div>
+  </div>
+<div class="wrap"><div class="preishinweise"><p><strong>Preise und Leistungsumfang</strong><br>Unser Angebot richtet sich ausschließlich an Unternehmer, insbesondere landwirtschaftliche Betriebe. Alle genannten Preise sind Nettopreise zuzüglich gesetzlicher Umsatzsteuer. Die Preisrahmen dienen zur Orientierung; den verbindlichen Preis und Leistungsumfang vereinbaren wir vor Beginn im Angebot.</p><p>Fahrtkosten werden vorab vereinbart und separat berechnet. Benötigte Software-Abos und KI-Nutzungskosten kommen nach Bedarf hinzu und werden ebenfalls vorab vereinbart. Bestehende Programme verwenden wir möglichst weiter.</p></div></div></section>
+<section class="ueber"><div class="wrap"><div class="kicker">Wer dahintersteht</div><h2>Am eigenen Hof entwickelt.<br>Gemeinsam weitergedacht.</h2>
+<p>Andreas führt einen gewachsenen Familienbetrieb in Gablingen: Legehennen, Pferdepension, Direktvermarktung mit Nudelproduktion, Ackerbau, Wald und Ökopunkte. Die Frage dahinter war einfach: <strong>Womit verdiene ich eigentlich mein Geld – und wie bekomme ich das Büro besser in den Griff?</strong></p>
+<p>Daraus entstand die Zusammenarbeit mit Erich Salk. Andreas bringt die Betriebspraxis und die Erfahrung mit KI im Hofalltag ein. Erich bringt das betriebswirtschaftliche Handwerk mit. Gemeinsam entwickeln und erproben wir die Abläufe am eigenen Betrieb.</p>
+<div class="galerie-grid">
+      <img src="Website Fotos/legehennen.jpg" alt="Legehennen im Stall">
+      <img src="Website Fotos/bodenbearbeitung.jpg" alt="Bodenbearbeitung auf dem Acker">
+      <img src="Website Fotos/weizenernte.jpg" alt="Weizenernte mit Mähdrescher">
+    </div><div class="personen">
+      <div class="person">
+        <img class="foto" src="Website Fotos/andreas-am-hof.jpg" alt="Andreas Kratzer am Hof">
+        <div class="info">
+          <h3>Andreas Kratzer</h3>
+          <div class="rolle">Landwirt · KI · Strategie</div>
+          <p>Praktizierender Betriebsleiter in Gablingen. Versteht Güllegrube, Weidezaun und Stallarbeit. Versteht Nährstoffbilanz, Rationsberechnung und Entwicklungsstadien. Entwickelt und nutzt KI-Abläufe im eigenen Hofalltag.</p>
+          <a class="person-link" href="https://www.hofladen-kratzer.de/">www.hofladen-kratzer.de</a>
+        </div>
+      </div>
+      <div class="person">
+        <img class="foto foto-erich" src="Website Fotos/erich-salk.webp" alt="Erich Salk bei der Buchhaltung am Laptop" width="1600" height="1069" loading="lazy">
+        <div class="info">
+          <h3>Erich Salk</h3>
+          <div class="rolle">Unternehmensberater · Zahlen · Controlling</div>
+          <p>Betriebswirt mit eigener Beratungspraxis (Aureus Consulting). Verwandelt Steuerberaterdaten in echte Betriebssteuerung. Verantwortet Struktur und Controlling.</p>
+          <a class="person-link" href="https://aureus-consulting.de/">aureus-consulting.de</a>
+        </div>
+      </div>
+    </div>
+
+</div></section>
+<section class="vortrag" style="background:var(--sand)"><div class="wrap"><div class="kicker">Vorträge</div><h2>KI im landwirtschaftlichen Betrieb – direkt aus der Praxis</h2><p>Für BBV-Ortsverbände, Maschinenringe und Landwirtschaftsvereine: Andreas zeigt, wie er KI im eigenen Hofbüro einsetzt. Weitere Vortragsthemen sind Bitcoin und Kapitalbildung. Themen, Formate und Dauer besprechen wir persönlich.</p><a class="btn" href="#kontakt">Vortrag anfragen</a></div></section>
+<section class="fuerwen"><div class="wrap"><div class="kicker">Für wen das passt</div><h2>Du willst Unterstützung. Kein neues Technikprojekt.</h2>
+<p>Du möchtest Büroaufgaben abgeben oder KI im Betrieb nutzen, ohne dich selbst um die Einrichtung zu kümmern. Für unsere Betriebszweig-Auswertung sind Höfe mit mehreren Standbeinen besonders passend. Eine betreute Betriebs-KI kann auch einem Betrieb mit nur einem Standbein helfen.</p>
+<p>Wir passen nicht, wenn du ausschließlich Förderanträge oder Agrarrecht suchst – oder erwartest, dass KI alle Entscheidungen ohne deine Prüfung trifft.</p></div></section>
+<section class="kontakt" id="kontakt"><div class="wrap"><div class="kicker">Erster Schritt</div><h2>Reden wir eine halbe Stunde</h2><p>Ein kostenloses Gespräch darüber, wie dein Betrieb aufgestellt ist und wo du Unterstützung brauchst. Bürobetreuung, eine eigene Betriebs-KI oder beides: Du bekommst eine persönliche Rückmeldung von Andreas.</p>
+<p class="kontaktwege"><strong>Telefon:</strong> <a href="tel:+4982308536262">08230 8536262</a><br><strong>E-Mail:</strong> <a href="mailto:info@sak-agrar.de">info@sak-agrar.de</a></p>
+<p class="redaktion">Vorschauhinweis: Das Postfach info@sak-agrar.de ist noch nicht eingerichtet. Bitte noch keine Anfrage dorthin senden. Vor dem Onlinegang werden Empfang und Versand getestet sowie Impressum und Datenschutzhinweise ergänzt. Es wird kein Kontaktformular eingesetzt.</p>
+<p>Wir nehmen bewusst nur wenige Betriebe an. Lieber ein Hof richtig als fünf nebenher.</p></div></section>
+</main><footer><div class="wrap">SAK Agrar · Andreas Kratzer · Gablingen, Bayern <span>Vorschau · Impressum und Datenschutz noch in Prüfung</span></div></footer></body></html>
